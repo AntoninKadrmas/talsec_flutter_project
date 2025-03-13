@@ -7,7 +7,7 @@ An Talsec assignment to try out implement the mobile app with their [freerasp pa
 ### Prerequisites
 Ensure you have the following installed:
 - [Flutter SDK](https://flutter.dev/docs/get-started/install)
-  - The project usues the [3.27.2 flutter sdk](https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.27.2-stable.zip). 
+  - The project uses the [3.27.2 flutter sdk](https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.27.2-stable.zip). 
 - Dart SDK (included with Flutter)
 - Android Studio or VS Code
 - Emulator or physical device for testing
@@ -32,9 +32,9 @@ Ensure you have the following installed:
 
 ### Languages
 
-1. edit exitsting language files in `/lib/l10n` for example `/lib/l10n/intl_en.arb` or add new `intl_{lang-sortcut}.arb`.
+1. edit existing language files in `/lib/l10n` for example `/lib/l10n/intl_en.arb` or add new `intl_{lang-shortcut}.arb`.
 2. all newly created languages add into `supportedLocales` in `MaterialApp` widget in `main.dart`
-3. Navigate to the project directory and genereate languages:
+3. Navigate to the project directory and generate languages:
    ```bash
    flutter pub run intl_utils:generate
    ```
