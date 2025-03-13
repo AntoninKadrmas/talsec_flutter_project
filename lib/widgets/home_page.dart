@@ -1,27 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freerasp/freerasp.dart';
+import 'package:talsec_flutter_project/utils/initializer.dart';
 import 'package:talsec_flutter_project/utils/provider.dart';
 import '../generated/l10n.dart'; // The generated localization file
-
-void _initializeCallback(WidgetRef ref, BuildContext context) {
-  final callback = ThreatCallback(
-    onUnofficialStore: () {
-      ref
-          .read(unofficialStoreProvider.notifier)
-          .setWarning(S.of(context).unofficialStoreWarning);
-    },
-  );
-  // Attaching listener
-  Talsec.instance.attachListener(callback);
-}
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    _initializeCallback(ref, context);
+    initializeCallback(ref, S.of(context).unofficialStoreWarning);
     final text = ref.watch(unofficialStoreProvider);
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).appBarTile)),
