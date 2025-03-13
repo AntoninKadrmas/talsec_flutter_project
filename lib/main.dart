@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:freerasp/freerasp.dart';
 import 'package:talsec_flutter_project/components/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:talsec_flutter_project/theme/theme.dart';
+import 'package:talsec_flutter_project/theme/util.dart';
 import 'package:talsec_flutter_project/utils/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
@@ -40,13 +42,16 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
+    final brightness = View.of(context).platformDispatcher.platformBrightness;
+
+    TextTheme textTheme = createTextTheme(context, "Roboto Mono", "Roboto");
+
+    MaterialTheme theme = MaterialTheme(textTheme);
     return MaterialApp(
       supportedLocales: [
         Locale('en', ''), // English
       ],
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme: brightness == Brightness.light ? theme.light() : theme.dark(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
