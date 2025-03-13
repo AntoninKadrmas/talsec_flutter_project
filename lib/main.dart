@@ -3,6 +3,8 @@ import 'package:freerasp/freerasp.dart';
 import 'package:talsec_flutter_project/components/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:talsec_flutter_project/utils/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,35 +35,24 @@ Future<void> _initializeTalsec() async {
   await Talsec.instance.start(config);
 }
 
-void _initializeCallback(WidgetRef ref) {
-  final callback = ThreatCallback(
-    onUnofficialStore: () {
-      ref
-          .read(unofficialStoreProvider.notifier)
-          .setWarning(
-            "Warning: This app was not installed from the official source (Google Play Store). It may have been tampered with by attackers. We strongly recommend uninstalling it immediately for you security.",
-          );
-    },
-  );
-  // Attaching listener
-  Talsec.instance.attachListener(callback);
-}
-
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
-    _initializeCallback(ref);
     return MaterialApp(
-      title: 'Flutter Demo',
+      supportedLocales: [
+        Locale('en', ''), // English
+      ],
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text("freeRASP Demo")),
-        body: const HomePage(),
-      ),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        S.delegate, // This is the generated localization delegate
+      ],
+      home: const HomePage(),
     );
   }
 }

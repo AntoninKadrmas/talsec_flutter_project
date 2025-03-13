@@ -1,0 +1,6 @@
+{
+    "appTile": "Flutter Demo",
+    "appBarTile": "freeRASP Demo",
+    "unofficialStoreWarning": "Warning: This app was not installed from the official source (Google Play Store). It may have been tampered with by attackers. We strongly recommend uninstalling it immediately for you security.",
+    "unofficialStoreWarningMissing": "No callback yet"
+}
