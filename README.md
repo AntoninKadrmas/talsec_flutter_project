@@ -105,7 +105,7 @@ Either use the apk that already exists in the `/lib/build` folder. Or build a ne
 This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
-For any issues, feel free to open an issue on GitHub or contact [Your Name] at [kadrmas.antonin@gmail.com].
+For any issues, feel free to open an issue on GitHub or contact Antonin Kadrmas at kadrmas.antonin@gmail.com.
 
 
 ## Assignment
