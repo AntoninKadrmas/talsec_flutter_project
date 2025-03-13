@@ -6,9 +6,12 @@ plugins {
 }
 
 android {
+    compileSdk = 35  // Update to API 35
+
     namespace = "com.example.talsec_flutter_project"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "27.0.12077973"
+//    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -20,12 +23,14 @@ android {
     }
 
     defaultConfig {
+        minSdk= 23  // Keep this as per your app requirement
+        targetSdk = 35  // Update to API 35
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.talsec_flutter_project"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+//        minSdk = flutter.minSdkVersion
+//        targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
