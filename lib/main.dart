@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:freerasp/freerasp.dart';
 import 'package:talsec_flutter_project/components/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:talsec_flutter_project/utils/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await _initializeTalsec();
 
-  runApp(const ProviderScope(child: HomePage()));
+  await _initializeTalsec();
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 /// Initialize Talsec configuration for Android and iOS
@@ -25,28 +26,42 @@ Future<void> _initializeTalsec() async {
         ],
       ),
     ),
-    iosConfig: IOSConfig(
-      bundleIds: ['com.aheaditec.freeraspExample'],
-      teamId: 'M8AK35...',
-    ),
-    watcherMail: 'your_mail@example.com',
+    watcherMail: 'kadrmas.antonin@gmail.com',
     isProd: true,
   );
 
   await Talsec.instance.start(config);
 }
 
-class MyApp extends StatelessWidget {
+void _initializeCallback(WidgetRef ref) {
+  final callback = ThreatCallback(
+    onUnofficialStore: () {
+      ref
+          .read(unofficialStoreProvider.notifier)
+          .setWarning(
+            "Warning: This app was not installed from the official source (Google Play Store). It may have been tampered with by attackers. We strongly recommend uninstalling it immediately for you security.",
+          );
+    },
+  );
+  // Attaching listener
+  Talsec.instance.attachListener(callback);
+}
+
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    _initializeCallback(ref);
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const HomePage(),
+      home: Scaffold(
+        appBar: AppBar(title: Text("freeRASP Demo")),
+        body: const HomePage(),
+      ),
     );
   }
 }
