@@ -4,7 +4,6 @@ import 'package:talsec_flutter_project/components/home_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:talsec_flutter_project/theme/theme.dart';
 import 'package:talsec_flutter_project/theme/util.dart';
-import 'package:talsec_flutter_project/utils/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
 
