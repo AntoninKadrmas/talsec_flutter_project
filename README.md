@@ -1,5 +1,22 @@
 # Talsec Flutter Project Documentation
 
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Languages](#languages)
+- [Project Structure](#project-structure)
+- [Dependencies](#dependencies)
+  - [Main Dependencies](#main-dependencies)
+  - [Dev Dependencies](#dev-dependencies)
+- [Usage](#usage)
+- [APK Usage](#apk-usage)
+  - [Build APK](#build-apk)
+- [License](#license)
+- [Feedback](#feedback)
+- [Assignment](#assignment)
+
 ## Project Overview
 An Talsec assignment to try out implement the mobile app with their [freerasp pasckage](https://pub.dev/packages/freerasp).
 
