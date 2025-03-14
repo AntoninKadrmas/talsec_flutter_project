@@ -24,12 +24,8 @@ Future<void> initializeTalsec() async {
   await Talsec.instance.start(config);
 }
 
-void initializeCallback(WidgetRef ref, String warning) {
-  final callback = ThreatCallback(
-    onUnofficialStore: () {
-      ref.read(unofficialStoreProvider.notifier).setWarning(warning);
-    },
-  );
+void initializeCallback(void Function() onCallback) {
+  final callback = ThreatCallback(onUnofficialStore: onCallback);
   // Attaching listener
   Talsec.instance.attachListener(callback);
 }

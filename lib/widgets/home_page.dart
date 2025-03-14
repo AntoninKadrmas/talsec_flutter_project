@@ -9,7 +9,11 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    initializeCallback(ref, S.of(context).unofficialStoreWarning);
+    initializeCallback(() {
+      ref
+          .read(unofficialStoreProvider.notifier)
+          .setWarning(S.of(context).unofficialStoreWarning);
+    });
     final text = ref.watch(unofficialStoreProvider);
     return Scaffold(
       appBar: AppBar(title: Text(S.of(context).appBarTile)),
