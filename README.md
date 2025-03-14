@@ -3,6 +3,12 @@
 ## Project Overview
 An Talsec assignment to try out implement the mobile app with their [freerasp pasckage](https://pub.dev/packages/freerasp).
 
+The first screen is shown imedietally after the install from apk. The second one should be display after few seconds when the unofficialStore callback is triggered.
+<p align="center">
+    <img src="assets/after_install_apk.png?raw=true" width="45%" />
+    <img src="assets/after_install_apk_warning.png?raw=true" width="45%" />
+</p>
+
 ## Getting Started
 ### Prerequisites
 Ensure you have the following installed:
@@ -128,5 +134,7 @@ Flutter: [https://github.com/talsec/Free-RASP-Flutter/tree/master/example](https
 Android: [https://github.com/talsec/Free-RASP-Android/tree/master/FreeRASPDemoApp](https://github.com/talsec/Free-RASP-Android/tree/master/FreeRASPDemoApp)  
 Duplication of existing demo apps is **prohibited**. Otherwise, you can use any public sources, ChatGPT, StackOverflow, etc.
 
-You should end up with app like this:  
-![alt text](/assets/assignment.png?raw=true)
+You should end up with app like this:
+<p align="center">
+    <img src="assets/assignment.png?raw=true" width="50%" />
+</p>  
