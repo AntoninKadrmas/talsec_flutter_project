@@ -110,6 +110,17 @@ Either use the apk that already exists in the `/lib/build` folder. Or build a ne
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
+## Feedback 
+The documentation was really straight forward and all the steps well documented. That is what I can say about the freeRASP. I thought the usage of the package would be much harder than just download the package from pub.dev and edit the android configuration (Manifest, setting, etc.).
+
+Although I did not find any information about malwareConfig option in he AndroidConfig widget (was looking in [Flutter api doc](https://docs.talsec.app/freerasp/integration/flutter/api)).
+
+Also the onUnofficialStore callback did not work in the emulator for me so i had to try another (onScreenShot) callback to verify if the implementation do catches the callback and correctly propagate the information into my widget. And then I downloaded the apk on my phone to check that the onUnofficialStore callback works.
+
+Also in the documentation (was looking in [Flutter api doc](https://docs.talsec.app/freerasp/integration/flutter/api)) in API section there was no information about the onScreenShot or onScreenRecording callbacks in the ThreatCallback section. And the wiki link is just span that is underlined with title of "Broken link".
+
+So if I look away from the Flutter documentation limitations I still thinks the integration was straight forward. And the pub.dev example useful.
+
 ## Assignment
 
 **Task Overview:**  
