@@ -1,4 +1,4 @@
-# Flutter Project Documentation
+# Talsec Flutter Project Documentation
 
 ## Project Overview
 An Talsec assignment to try out implement the mobile app with their [freerasp pasckage](https://pub.dev/packages/freerasp).
